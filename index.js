@@ -30,6 +30,6 @@ app.listen(PORT,()=>{
 app.post('/merge', upload.array('pdfs', 3),async (req,res,next)=>{
     // console.log(req.files);// checking the data
     const result = await mergePdfs(path.join(__dirname,req.files[0].path),path.join(__dirname, req.files[1].path));
-    let url = `http://localhost:3000/static/${result}.pdf`;
+    let url = `http://3.6.91.230/static/${result}.pdf`;
     res.redirect(url);
 })
